@@ -1,20 +1,20 @@
-# -*= coding:utf-8 -*-
+#!/usr/bin/python3
+# -*- coding:utf-8 -*-
 
 from http import cookiejar
 from urllib import request as Req
 from urllib import parse
 import base64
-import json
 
 
 class Login:
-    def __init__(self):
-        self.username   = '220151538'
-        self.password   = 'dx2010001'
-        self.login_url  = 'https://w.seu.edu.cn/index.php/index/login'
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+        self.login_url = 'https://w.seu.edu.cn/index.php/index/login'
         self.logout_url = 'https://w.seu.edu.cn/index.php/index/logout'
-        self.cookies    = cookiejar.CookieJar()
-        self.opener     = Req.build_opener(Req.HTTPCookieProcessor(self.cookies))
+        self.cookies = cookiejar.CookieJar()
+        self.opener = Req.build_opener(Req.HTTPCookieProcessor(self.cookies))
 
     def login(self):
         data = parse.urlencode({
@@ -45,7 +45,6 @@ class Login:
         print(result)
 
     def logout(self):
-
         headers = {
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
             'Accept-Ecoding': 'gzip, deflate, br',

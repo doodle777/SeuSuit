@@ -8,7 +8,7 @@
 
 ## Version 0.0.2
 
-增加了查询网络登录 Network.login
+增加了网络登录 Network.login
 
 ## Version 0.0.1
 
